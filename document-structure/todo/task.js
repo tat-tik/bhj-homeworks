@@ -14,19 +14,15 @@ function addTask() {
     taskInput.value = '';
 };
 
-const handler1 = (e) => {
-    if (e.key === 'Enter' && taskInput.value.trim() !== '') {  
-    	addTask();             
-    }
-};
-const handler2 = (e) => {
+
+const handler = (e) => {
 	e.preventDefault();
     if (taskInput.value.trim() !== '') {   
     	addTask();            
     }
 };
-taskInput.addEventListener('keydown', handler1);
-btn.addEventListener('click', handler2);
+
+btn.addEventListener('click', handler);
 
 const deleteTask = (e) => {
 	let task = e.target.closest(".task")
